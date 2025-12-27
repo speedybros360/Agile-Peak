@@ -139,11 +139,11 @@ def determine_activity_type(stream_data: dict,
 
 
 # --------------------------------------------------------------------------- #
-def main(token: str) -> None:
+def main(token: str, activities_json_path: str | Path) -> None:
     # 1. Load activity IDs
-    ids_data = load_json(ACTIVITY_IDS_FILE)
+    ids_data = load_json(activities_json_path)
     if not isinstance(ids_data, list):
-        print(f"❌ Expected a JSON array in {ACTIVITY_IDS_FILE}")
+        print(f"Expected a JSON array in {activities_json_path}")
         sys.exit(1)
 
     # 2. Load compiled streams
