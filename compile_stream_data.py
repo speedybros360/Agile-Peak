@@ -22,7 +22,7 @@ ACTIVITY_IDS_FILE = "activities_2025.json"
 current_year = datetime.now().strftime("%Y")
 filename = f"compiled_{current_year}_stream_data.json"
 """
-COMPILED_STREAMS_FILE = "Comprehensive_stream_data.py"
+COMPILED_STREAMS_FILE = "Comprehensive_stream_data.json"
 
 # --------------------------------------------------------------------------- #
 # Helper functions
