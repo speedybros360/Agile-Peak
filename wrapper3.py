@@ -1,5 +1,5 @@
 """
-quick_start.py
+wrapper3.py
 
 A tiny wrapper that:
   1. Runs the OAuth flow from API_oauth_activityread.py
@@ -78,7 +78,7 @@ def main() -> None:
 
     # 3.2: Write out a JSON file, same naming scheme as the original script
     current_year = datetime.now(timezone.utc).year
-    activities_file = Path(f"activities_{current_year}.json")
+    activities_file = Path(f"json_dump/activities_{current_year}.json")
 
     try:
         with activities_file.open("w", encoding="utf-8") as f:
