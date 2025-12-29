@@ -13,7 +13,7 @@ from pathlib import Path
 # 1. Load the JSON file
 # --------------------------------------------------------------------------- #
 
-DATA_FILE = Path("datacrunchtest.json")
+DATA_FILE = Path("json_dump/datacrunchtest.json")
 
 if not DATA_FILE.exists():
     raise FileNotFoundError(f"Could not find {DATA_FILE}")
