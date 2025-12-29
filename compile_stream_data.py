@@ -16,13 +16,13 @@ import requests
 
 # --------------------------------------------------------------------------- #
 # Configuration – edit if you want to change the file names
-ACTIVITY_IDS_FILE = "activities_2025.json"
+ACTIVITY_IDS_FILE = "json_dump/activities_2025.json"
 
 """
 current_year = datetime.now().strftime("%Y")
 filename = f"compiled_{current_year}_stream_data.json"
 """
-COMPILED_STREAMS_FILE = "Comprehensive_stream_data.json"
+COMPILED_STREAMS_FILE = "json_dump/Comprehensive_stream_data.json"
 
 # --------------------------------------------------------------------------- #
 # Helper functions

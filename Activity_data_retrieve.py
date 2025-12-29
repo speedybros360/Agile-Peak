@@ -103,7 +103,7 @@ def main() -> None:
 
     # Determine output file name: activities_<YYYY>.json
     current_year = datetime.now(timezone.utc).year
-    output_file = f"activities_{current_year}.json"
+    output_file = f"json_dump/activities_{current_year}.json"
 
     try:
         with open(output_file, "w", encoding="utf-8") as f:

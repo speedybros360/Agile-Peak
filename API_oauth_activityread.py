@@ -14,7 +14,7 @@ CLIENT_SECRET = "3e13fd5a395a1eabcd91980ae458e42787e52f00"
 REDIRECT_URI  = "http://localhost:8000/exchange_token"
 SCOPE         = "activity:read_all"          # <-- changed scope
 
-TOKEN_FILE    = Path(__file__).parent / "token.json"
+TOKEN_FILE    = Path(__file__).parent / "json_dump/token.json"
 
 # ----------------------------------------------------------------
 class OAuthHandler(http.server.BaseHTTPRequestHandler):
