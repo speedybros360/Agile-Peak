@@ -1,5 +1,5 @@
 """
-wrapper3.py
+wrapper4.py
 
 A tiny wrapper that:
   1. Runs the OAuth flow from API_oauth_activityread.py
@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 # ------------------------------------------------------------------
-# 1 Import the two modules that live in the same directory
+# 1 Import the modules that live in the same directory
 # ------------------------------------------------------------------
 try:
     from API_oauth_activityread import (
@@ -33,6 +33,14 @@ try:
 except Exception as exc:
     raise ImportError(
         "Could not import Activity_data_retrieve.py. "
+        f"Make sure it is in the same directory."
+    ) from exc
+
+try:
+    import CalcPersonalHRZ as phrzc
+except Exception as exc:
+    raise ImportError(
+        "Could not import CalcPersonalHRZ.py"
         f"Make sure it is in the same directory."
     ) from exc
 
@@ -98,6 +106,15 @@ def main() -> None:
 
     # Pass the same activities file that we just wrote.
     csd.main(token, str(activities_file))
+
+    #Pass the compiled run w/ HR data to the heart rate zone calculator
+    input_path_prhrzc = Path("json_dump/Comprehensive_stream_data.json").expanduser().resolve()
+    output_path_prhzc = Path("json_dump/personal_hr_zones.py").expanduser().resolve()
+    arg_phrzc = [str(input_path_prhrzc)]
+    if output_path_prhzc is not None:
+        arg_phrzc.append(str(output_path_prhzc))
+
+    phrzc.main(arg_phrzc)
 
 # ------------------------------------------------------------------
 if __name__ == "__main__":

@@ -130,12 +130,12 @@ def main(argv):
         print(__doc__)
         sys.exit(1)
 
-    input_path = Path(argv[1]).expanduser()
+    input_path = Path(argv[0]).expanduser()
     if not input_path.is_file():
         print(f"❌  File does not exist: {input_path}")
         sys.exit(1)
 
-    output_path = Path(argv[2]) if len(argv) > 2 else Path("hr_zones.json")
+    output_path = Path(argv[1]) if len(argv) > 2 else Path("bad_call_hr_zones.json")
 
     # Load the data
     try:
