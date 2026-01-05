@@ -135,7 +135,9 @@ def main(argv):
         print(f"❌  File does not exist: {input_path}")
         sys.exit(1)
 
-    output_path = Path(argv[1]) if len(argv) > 2 else Path("bad_call_hr_zones.json")
+    #   
+    output_path = Path(argv[1]) if len(argv) > 1 else Path("json_dump/bad_call_hr_zones.json")
+
 
     # Load the data
     try:

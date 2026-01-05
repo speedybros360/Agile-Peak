@@ -109,7 +109,7 @@ def main() -> None:
 
     #Pass the compiled run w/ HR data to the heart rate zone calculator
     input_path_prhrzc = Path("json_dump/Comprehensive_stream_data.json").expanduser().resolve()
-    output_path_prhzc = Path("json_dump/personal_hr_zones.py").expanduser().resolve()
+    output_path_prhzc = Path("json_dump/personal_hr_zones.json").expanduser().resolve()
     arg_phrzc = [str(input_path_prhrzc)]
     if output_path_prhzc is not None:
         arg_phrzc.append(str(output_path_prhzc))
